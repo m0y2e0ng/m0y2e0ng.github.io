@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>종강 d-7</title>
+	<meta name="description" content="설명">
+	<meta name="keywords" content="키워드1, 키워드2">
+	<meta property="og:image" content="">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link rel="stylesheet" href="d-7.css">
+	<link rel="icon" type="image/png" href="">
+
+</head>
+<body>
+
+  <div class="header">
+<p class="title1">종강 d-7</p>
+<p class="title2">28번의 시간</p>
+</div>
+
+	<table>
+		<tr>
+			<td data-date="17">17<div class="diag-left yellow"></div></td>
+			<td data-date="5">5<div class="diag-right green"></div></td>
+			<td data-date="22">22<div class="diag-right purple"></div></td>
+			<td data-date="9">9<div class="diag-left orange"></div></td>
+			<td data-date="14">14<div class="diag-right red"></div></td>
+			<td data-date="26">26<div class="diag-left greenyellow"></div></td>
+			<td data-date="1">1<div class="diag-left blue"></div></td>
+		</tr>
+
+		<tr>
+		<td data-date="12">12<div class="diag-left orange"></div></td>
+		<td data-date="27">27<div class="diag-left greenyellow"></div></td>
+		<td data-date="4">4<div class="diag-left blue"></div></td>
+		<td data-date="2">2<div class="diag-left blue"></div></td>
+		<td data-date="25">25<div class="diag-left greenyellow"></div></td>
+		<td data-date="15">15<div class="diag-right red"></div></td>
+		<td data-date="6">6<div class="diag-right green"></div></td>
+		</tr>
+
+		<tr>
+			<td data-date="24">24<div class="diag-right purple"></div></td>
+			<td data-date="13">13<div class="diag-right red"></div></td>
+			<td data-date="10">10<div class="diag-left orange"></div></td>
+			<td data-date="8">8<div class="diag-right green"></div></td>
+			<td data-date="11">11<div class="diag-left orange"></div></td>
+			<td data-date="28">28<div class="diag-left greenyellow"></div></td>
+			<td data-date="19">19<div class="diag-left yellow"></div></td>
+		</tr>
+
+		<tr>
+			<td data-date="18">18<div class="diag-left yellow"></div></td>
+			<td data-date="21">21<div class="diag-right purple"></div></td>
+			<td data-date="16">16<div class="diag-right red"></div></td>
+			<td data-date="3">3<div class="diag-left blue"></div></td>
+			<td data-date="7">7<div class="diag-right green"></div></td>
+			<td data-date="23">23<div class="diag-right purple"></div></td>
+			<td data-date="20">20<div class="diag-left yellow"></div></td>
+		</tr>
+
+	</table>
+
+
+    <div class="footer">
+  <div class="button1"><button id="reset">d-day!</button></div>
+  <a href="original/index.html" target="_blank">
+    <div class="button2"><p class="b2text">original</p></div></a>
+    </div>
+
+
+	<script>
+  (function(d) {
+    var config = {
+    kitId: 'rgv2ukp',
+    scriptTimeout: 3000,
+    async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+
+<script>
+  document.querySelectorAll('td').forEach(td => {
+    td.addEventListener('click', () => {
+      const diagLeft = td.querySelector('.diag-left');
+      const diagRight = td.querySelector('.diag-right');
+
+      if (diagLeft) {
+        const isVisible = diagLeft.style.display !== 'none';
+        diagLeft.style.display = isVisible ? 'none' : 'block';
+      } else if (diagRight) {
+        const isVisible = diagRight.style.display !== 'none';
+        diagRight.style.display = isVisible ? 'none' : 'block';
+      }
+    });
+  });
+</script>
+
+<script>
+  // 1. 저장된 "보이는 선 목록" 가져오기
+  let shownLines = JSON.parse(localStorage.getItem('shownLines')) || [];
+
+  // 2. 페이지 열릴 때 저장된 선을 다시 보이게 하기
+  shownLines.forEach(date => {
+    const td = document.querySelector(`td[data-date="${date}"]`);
+    if (td) {
+      const diagLeft = td.querySelector('.diag-left');
+      const diagRight = td.querySelector('.diag-right');
+
+      if (diagLeft) diagLeft.style.display = 'block';
+      if (diagRight) diagRight.style.display = 'block';
+    }
+  });
+
+  // 3. 클릭할 때 선 보이게 하고 저장
+  document.querySelectorAll('td').forEach(td => {
+    td.addEventListener('click', () => {
+      const date = td.getAttribute('data-date');
+      const diagLeft = td.querySelector('.diag-left');
+      const diagRight = td.querySelector('.diag-right');
+
+      // 선 보이게
+      if (diagLeft && diagLeft.style.display !== 'block') {
+        diagLeft.style.display = 'block';
+      } else if (diagRight && diagRight.style.display !== 'block') {
+        diagRight.style.display = 'block';
+      } else {
+        // 이미 보이는 경우 아무 것도 안 함
+        return;
+      }
+
+      // 중복 저장 방지
+      if (!shownLines.includes(date)) {
+        shownLines.push(date);
+        localStorage.setItem('shownLines', JSON.stringify(shownLines));
+      }
+    });
+  });
+</script>
+
+<script>
+  document.getElementById('reset').addEventListener('click', () => {
+    localStorage.removeItem('shownLines'); // 저장된 선 정보 삭제
+    location.reload(); // 페이지 새로고침
+  });
+</script>
+
+
+</body>
+</html>

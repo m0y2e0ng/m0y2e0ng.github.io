@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Toilet</title>
+	<meta name="description" content="설명"> <!--설명:검색했을 때 첫 문장-->
+	<meta name="keywords" content="키워드1, 키워드2">
+	<meta property="og:image" content="">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link rel="stylesheet" href="toilet.css">
+	<link rel="icon" type="image/png" href=""> <!--icon:탭에 아이콘-->
+
+</head>
+<body>
+
+<audio src="sound/toilet-flushing-7059.mp3" id="sound"></audio>
+
+	<div class="toilet">
+<img src="image/toilet2.png" id="toilet">
+	</div>
+
+	<script>
+		
+		const img = document.getElementById('toilet');
+		const sound = document.getElementById('sound');
+
+		img.addEventListener ("click", (event) => {
+			sound.play();
+			setTimeout(() => {
+				window.location.href = "oops.html";
+			}, 4000);
+		});
+
+
+	</script>
+
+</body>
+</html>

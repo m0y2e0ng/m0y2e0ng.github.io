@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>윤희에게</title>
+    <meta name="description" content="설명">
+    <meta name="keywords" content="키워드1, 키워드2">
+    <meta property="og:image" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="yoonhee.css">
+    <link rel="icon" type="image/png" href="">
+  </head>
+
+  <body>
+
+
+    <a id="1" href="#2">
+      <h1>윤희에게</h1>
+    </a>
+    
+    <a id="2" href="#3">
+      <h1>ユンヒへ。</h1>
+      <p><mark>잘 지내니? 오랫동안 이렇게 묻고 싶었어.</mark></p>
+    </a>
+
+    <a id="3" href="#4">
+      <h1>ユンヒへ。</h1>
+      <p>元気だった？ ずっと前から聞きたかった。<mark>너는 나를 잊었을 수도 있겠지. 벌써 이십 년이 지났으니까.</mark></p>
+    </a>
+
+    <a id="4" href="#5">
+      <h1>ユンヒへ。</h1>
+      <p>元気だった？ ずっと前から聞きたかった。あなたは私のことを忘れてしまったかも。もう、20年も経ったから。<mark>갑자기 너한테 내 소식을 전하고 싶었나 봐.</mark></p>
+    </a>
+
+    <a id="5" href="#6">
+      <h1>ユンヒへ。</h1>
+      <p>元気だった？ ずっと前から聞きたかった。あなたは私のことを忘れてしまったかも。もう、20年も経ったから。急に私のことを伝えたくなったの。<mark>살다보면 그럴 때가 있지 않니?</mark></p>
+    </a>
+
+    <a id="6" href="#7">
+      <h1>ユンヒへ。</h1>
+      <p>元気だった？ ずっと前から聞きたかった。あなたは私のことを忘れてしまったかも。もう、20年も経ったから。急に私のことを伝えたくなったの。生きていればそんな時があるでしょう。<mark>뭐든 더이상 참을 수 없어질 때가.</mark></p>
+    </a>
+
+    <a id="7" href="#8">
+      <h1>ユンヒへ。</h1>
+      <p>元気だった？ ずっと前から聞きたかった。あなたは私のことを忘れてしまったかも。もう、20年も経ったから。急に私のことを伝えたくなったの。生きていればそんな時があるでしょう。どうしても我慢できなくなってしまう時が。</p>
+    </a>
+                      
+            
+
+
+
+
+    <audio id="bgm" src="sound/김해원_07_편지 2 (Narr.)_윤희에게 Original Soundtrack_320.mp3"></audio>
+
+    <script>
+      let played = false;
+    
+      window.addEventListener("hashchange", () => {
+        if (location.hash === "#2" && !played) {
+          const audio = document.getElementById("bgm");
+          audio.play();
+          played = true;
+        }
+      });
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,39 @@
+		*{
+ margin : 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+    margin: 20px;
+}
+
+
+.parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.bell { 
+    width: 100%;          /* 화면 가로폭에 맞춤 */
+    max-width: 234px;     /* 원래 최대 크기 유지 */
+    height: auto;
+}
+
+.bell:hover {
+    animation: wiggle 0.3s ease-in-out infinite alternate;
+}
+
+@keyframes wiggle {
+  from { transform: rotate(-5deg); }
+  to { transform: rotate(5deg); }
+}
+
+/* 작은 화면에서 이미지 비율 유지하며 가로폭 꽉 채우기 */
+@media screen and (max-width: 704px) {
+    .bell {
+        max-width: 100%;
+    }
+}

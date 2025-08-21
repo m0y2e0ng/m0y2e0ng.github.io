@@ -1,0 +1,47 @@
+		*{
+ margin : 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+    margin: 20px;
+}
+
+
+
+.tv-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.tv-image-wrapper {
+    position : relative;
+    display : inline-block;
+
+.tv-image {
+    width: 910px;
+    display: block;
+    }
+
+.tv-screen {
+    position: absolute;
+    width: 690px;
+    height: 390px;
+    top : 237px;
+    left : 109px;
+    right : 110px;
+    bottom: 283px;;
+    border: none;
+    z-index: 1;
+    }
+
+.tv-screen iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+
+    
+

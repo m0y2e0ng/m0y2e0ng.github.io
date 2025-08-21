@@ -1,0 +1,57 @@
+		*{
+ margin : 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+
+.oops { display: flex;
+align-items: flex-start;
+justify-content: center;
+height: 100vh;}
+
+img {width: 1388px;
+}
+
+.all {
+    position: relative;
+}
+
+.poop-shape iframe {
+    position: absolute;
+    top : 35%;
+    left : 32%;
+
+    width: 700px;
+    height: 650px;
+    border: none;
+
+    clip-path : url(#poopClip);
+    -webkit-clip-path: url(#poopClip);
+
+    filter: blur(7px);
+    transition: filter 0.3s;
+    cursor: pointer;
+
+    /* -webkit-mask-image: url('image/toilet.png');
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    mask-image: url('image/toilet.png');
+    mask-repeat: no-repeat;
+    mask-size: cover;  */
+}
+
+
+.poop-shape iframe:hover {
+    filter: blur(0);
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+@media screen and (max-width: 704px) {
+
+}

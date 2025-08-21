@@ -1,0 +1,36 @@
+		*{
+ margin : 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+    margin: 20px;
+}
+
+.toilet {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    height: 100vh;
+
+}
+
+img {
+    width: 508px;;
+}
+
+
+img:hover {
+    animation: wiggle 0.3s ease-in-out infinite alternate;
+}
+
+@keyframes wiggle {
+  from { transform: rotate(-5deg); }
+  to { transform: rotate(5deg); }
+}
+
+
+@media screen and (max-width: 704px) {
+
+}

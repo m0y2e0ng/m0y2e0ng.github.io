@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Remote</title>
+	<meta name="description" content="설명">
+	<meta name="keywords" content="키워드1, 키워드2">
+	<meta property="og:image" content="">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link rel="stylesheet" href="remocon.css">
+	<link rel="icon" type="image/png" href="">
+
+</head>
+<body>
+
+	<audio id="sound" src="sound/television-80399.mp3"></audio>
+	<div class="parent">
+	<img id="clickimage" src="image/remocon.png" class="remocon"></a>
+	</div>
+
+	<script>
+		const img = document.getElementById('clickimage');
+		const sound = document.getElementById('sound');
+		img.addEventListener ("click", () => {sound.play();});
+		img.addEventListener ("click", (event) => {
+			event.preventDefault();
+			sound.play();
+			setTimeout(() => {
+				window.location.href = "tv.html";
+			}, 1500);
+			});
+	</script>
+	
+</body>
+</html>

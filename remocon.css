@@ -1,0 +1,33 @@
+		*{
+ margin : 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+    margin: 20px;
+}
+
+.parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.remocon {
+    width: 290px;
+}
+
+.remocon:hover {
+    animation: wiggle 0.3s ease-in-out infinite alternate;
+}
+
+@keyframes wiggle {
+  from { transform: rotate(-5deg); }
+  to { transform: rotate(5deg); }
+}
+
+@media screen and (max-width: 704px) {
+
+}
